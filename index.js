@@ -10,13 +10,17 @@ function onClick(_event) {
   fetch(RANDOM_DOG_URL)
     .then(toJson)
     .then(function(jsonResponse) {
-      const img = document.createElement("img");
-      img.alt = "Perrito Bonito!";
-      img.src = jsonResponse.message;
-
+      const img = makeImageFrom(jsonRespone.message);
       document.querySelector(".doggos").appendChild(img);
     });
 }
 function toJson(apiResponse) {
   return apiResponse.json();
+}
+
+function makeImageFrom(dogUrl) {
+  const img = document.createElement("img");
+  img.alt = "Perrito Bonito!";
+  img.src = dogUrl;
+  return img;
 }
