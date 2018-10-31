@@ -16,7 +16,8 @@ function onClickBreeds(_event) {
       return apiResponse.json();
     })
     .then(function(jsonResponse) {
-      console.log(jsonResponse.message);
+      const breeds = jsonResponse.message;
+      console.log(breeds);
     });
 }
 function toJson(apiResponse) {
