@@ -36,14 +36,23 @@ function onClickBreeds(_event) {
       option.innerText = "--Please choose an option below--";
       //console.log(option);
       document.querySelector("#breed-select").appendChild(option);
+
+      const razas = Object.keys(breeds);
+      const option2 = document.createElement("option");
+      option2.value = razas[76];
+      option2.innerText = capitalizeFirstLetter(razas[76]);
+      document.querySelector("#breed-select").appendChild(option2);
     });
+  function capitalizeFirstLetter(string) {
+    return string.charAt(o).toUpperCase() + string.slice(1);
+  }
 
   /* 
     <section id="breed-container">
      <label for="breed-select">Choose a breed:</label>
       <select id="breed-select">
         <option value="">--Please choose an option below--</option>
-        <option value="beagle">Dog</option>
+        <option value="sheepdog">Dog</option>
       </select>
      </section> 
 */
