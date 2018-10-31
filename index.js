@@ -2,6 +2,12 @@ start();
 
 function start() {
   document.querySelector(".add-doggo").addEventListener("click", onClick);
+  document
+    .querySelector(".list-breeds")
+    .addEventListener("click", onClickBreeds);
+}
+function onClickBreeds(_event) {
+  console.log(_event);
 }
 
 function onClick(_event) {
