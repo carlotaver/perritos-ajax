@@ -22,6 +22,11 @@ function onClickBreeds(_event) {
       label.innerText = "Choose a breed:";
       //console.log(label);
       document.querySelector("#breed-container").appendChild(label);
+
+      const select = document.createElement("select");
+      select.id = "breed-select";
+      document.querySelector("#breed-container").appendChild(select);
+      console.log(select);
     });
   /* 
     <section id="breed-container">
