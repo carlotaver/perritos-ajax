@@ -12,6 +12,7 @@ function onClickBreeds(_event) {
   const LIST_BREEDS_URL = "https://dog.ceo/api/breeds/list/all";
 
   fetch(LIST_BREEDS_URL)
+    .then(toJson)
     .then(function(apiResponse) {
       return apiResponse.json();
     })
