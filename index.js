@@ -16,6 +16,7 @@ function onClickBreeds(_event) {
     .then(function(jsonResponse) {
       const breeds = jsonResponse.message;
       //console.log(breeds);
+
       // TODO:Extraer crearLabel function
       const label = document.createElement("label");
       label.htmlFor = "breed-select";
@@ -23,11 +24,20 @@ function onClickBreeds(_event) {
       //console.log(label);
       document.querySelector("#breed-container").appendChild(label);
 
+      // TODO:Extraer crearSelect function
       const select = document.createElement("select");
       select.id = "breed-select";
+      //console.log(select);
       document.querySelector("#breed-container").appendChild(select);
-      console.log(select);
+
+      // TODO:Extraer crearOption function
+      const option = document.createElement("option");
+      option.value = "";
+      option.innerText = "--Please choose an option below--";
+      //console.log(option);
+      document.querySelector("#breed-select").appendChild(option);
     });
+
   /* 
     <section id="breed-container">
      <label for="breed-select">Choose a breed:</label>
