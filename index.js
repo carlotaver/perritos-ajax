@@ -11,9 +11,16 @@ function start() {
 function onClickBreeds(_event) {
   const LIST_BREEDS_URL = "https://dog.ceo/api/breeds/list/all";
 
-  fetch(LIST_BREEDS_URL).then(function(apiResponse) {
-    console.log(apiResponse);
-  });
+  fetch(LIST_BREEDS_URL)
+    .then(function(apiResponse) {
+      return apiResponse.json();
+    })
+    .then(function(jsonResponse) {
+      console.log(jsonResponse.message);
+    });
+}
+function toJson(apiResponse) {
+  return apiResponse.json();
 }
 
 function onClickRandom(_event) {
