@@ -15,9 +15,14 @@ function onClickBreeds(_event) {
     .then(toJson)
     .then(function(jsonResponse) {
       const breeds = jsonResponse.message;
-      console.log(breeds);
+      //console.log(breeds);
+      const label = document.createElement("label");
+      label.htmlFor = "breed-select";
+      label.innerText = "Choose a breed:";
+      //console.log(label);
+      document.querySelector("#breed-container").appendChild(label);
     });
-/* 
+  /* 
     <section id="breed-container">
      <label for="breed-select">Choose a breed:</label>
       <select id="breed-select">
@@ -31,10 +36,9 @@ function toJson(apiResponse) {
   return apiResponse.json();
 }
 
-function makeImageFrom(breeds_Url){
-  const image = document..createElement("img");
+function makeImageFrom(breeds_Url) {
+  const image = document.createElement("img");
 }
-
 
 function onClickRandom(_event) {
   const RANDOM_DOG_URL = "https://dog.ceo/api/breeds/image/random";
