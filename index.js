@@ -16,6 +16,7 @@ function onClickBreeds(_event) {
     .then(function(jsonResponse) {
       const breeds = jsonResponse.message;
       //console.log(breeds);
+      // TODO:Extraer crearLabel function
       const label = document.createElement("label");
       label.htmlFor = "breed-select";
       label.innerText = "Choose a breed:";
@@ -34,10 +35,6 @@ function onClickBreeds(_event) {
 }
 function toJson(apiResponse) {
   return apiResponse.json();
-}
-
-function makeImageFrom(breeds_Url) {
-  const image = document.createElement("img");
 }
 
 function onClickRandom(_event) {
