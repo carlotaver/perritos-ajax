@@ -13,17 +13,28 @@ function onClickBreeds(_event) {
 
   fetch(LIST_BREEDS_URL)
     .then(toJson)
-    .then(function(apiResponse) {
-      return apiResponse.json();
-    })
     .then(function(jsonResponse) {
       const breeds = jsonResponse.message;
       console.log(breeds);
     });
+/* 
+    <section id="breed-container">
+     <label for="breed-select">Choose a breed:</label>
+      <select id="breed-select">
+        <option value="">--Please choose an option below--</option>
+        <option value="beagle">Dog</option>
+      </select>
+     </section> 
+*/
 }
 function toJson(apiResponse) {
   return apiResponse.json();
 }
+
+function makeImageFrom(breeds_Url){
+  const image = document..createElement("img");
+}
+
 
 function onClickRandom(_event) {
   const RANDOM_DOG_URL = "https://dog.ceo/api/breeds/image/random";
