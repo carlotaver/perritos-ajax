@@ -9,18 +9,21 @@ function onClick(_event) {
 
   fetch(RANDOM_DOG_URL)
     .then(toJson)
-    .then(function(jsonResponse) {
-      const img = makeImageFrom(jsonRespone.message);
-      document.querySelector(".doggos").appendChild(img);
-    });
+    .then(appendImgToDOM);
 }
+
 function toJson(apiResponse) {
   return apiResponse.json();
 }
 
+function appendImgToDOM(jsonResponse) {
+  const img = makeImageFrom(jsonResponse.message);
+  document.querySelector(".doggos").appendChild(img);
+}
+
 function makeImageFrom(dogUrl) {
-  const img = document.createElement("img");
-  img.alt = "Perrito Bonito!";
-  img.src = dogUrl;
-  return img;
+  const image = document.createElement("img");
+  image.alt = "Perrito Bonito!";
+  image.src = dogUrl;
+  return image;
 }
